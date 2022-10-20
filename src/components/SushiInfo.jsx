@@ -28,7 +28,7 @@ const Test = () => {
   return (
     <>
       {show ? (
-        <div className="loader-container-starter5">
+        <div className="sushi-info">
           <>
             <div className="sushi-info-wrapper">
               <div className="sushi-info-container">

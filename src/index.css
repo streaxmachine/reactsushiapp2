@@ -183,18 +183,6 @@ li:nth-child(-n+3) {
   z-index: 1;
 }
 
-.loader-container-starter3 {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
-  color: wheat;
-  z-index: 3;
-}
-
 .search-input {
   width: 85%;
   border: 1px solid #726612;
@@ -210,7 +198,7 @@ input {outline:none;}
   width: 15%;
 }
 
-.loader-container-starter5 {
+.sushi-info {
   position: fixed;
   z-index: 5;
   width: 50%;
@@ -454,7 +442,7 @@ color: rgb(227, 91, 91);
     flex-direction: column;
   }
 
-  .loader-container-starter5 {
+  .sushi-info {
     width: 100%;
   }
 }
