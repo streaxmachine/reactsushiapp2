@@ -28,10 +28,7 @@ function App() {
                 path="/editSushi/:id"
                 element={<AddSushi setCube={setCube} />}
               />
-              <Route
-                path="/aboutSushi/:id"
-                element={<AboutSushi setCube={setCube} />}
-              />
+              <Route path="/aboutSushi/:id" element={<AboutSushi />} />
             </Routes>
           </BrowserRouter>
         </div>
