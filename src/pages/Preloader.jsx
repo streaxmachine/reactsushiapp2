@@ -7,7 +7,6 @@ const Preloader = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(active);
     if (active === false) {
       setTimeout(() => {
         setLoading(false);
