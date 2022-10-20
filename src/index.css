@@ -449,6 +449,16 @@ color: rgb(227, 91, 91);
   color: wheat;
 }
 
+@media (max-width: 500px) {
+  main {
+    flex-direction: column;
+  }
+
+  .loader-container-starter5 {
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .button-37 {
     padding: 5px 30px;
