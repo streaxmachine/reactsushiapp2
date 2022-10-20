@@ -8,7 +8,7 @@ import AboutSushi from "./pages/AboutSushi";
 import Test from "./components/SushiInfo";
 
 function App() {
-  const [cube, setCube] = useState("green");
+  const [cube, setCube] = useState("");
 
   return (
     <>
