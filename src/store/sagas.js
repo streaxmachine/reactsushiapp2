@@ -52,12 +52,12 @@ function* onAddSushiStartAsync({ payload }) {
   }
 }
 
-function* onDeleteSushiStartAsync(userId) {
+function* onDeleteSushiStartAsync(sushiId) {
   try {
-    const response = yield call(deleteSushiApi, userId);
+    const response = yield call(deleteSushiApi, sushiId);
     if (response.status === 200) {
       yield delay(500);
-      yield put(deleteSushiSuccess(userId));
+      yield put(deleteSushiSuccess(sushiId));
     }
   } catch (error) {
     yield put(deleteSushiError(error.response.data));
@@ -77,8 +77,8 @@ function* onUpdateSushiStartAsync({ payload: { id, formValue } }) {
 
 function* onDeleteSushi() {
   while (true) {
-    const { payload: userId } = yield take(types.DELETE_SUSHI_START);
-    yield call(onDeleteSushiStartAsync, userId);
+    const { payload: sushiId } = yield take(types.DELETE_SUSHI_START);
+    yield call(onDeleteSushiStartAsync, sushiId);
   }
 }
 
@@ -94,13 +94,12 @@ function* onLoadSushi() {
   yield takeEvery(types.LOAD_SUSHI_START, onLoadSushiStartAsync);
 }
 
-const sushiSagas = [
-  fork(onLoadSushi),
-  fork(onAddSushi),
-  fork(onDeleteSushi),
-  fork(onUpdateSushi),
-];
-
 export default function* rootSaga() {
+  const sushiSagas = [
+    fork(onLoadSushi),
+    fork(onAddSushi),
+    fork(onDeleteSushi),
+    fork(onUpdateSushi),
+  ];
   yield all([...sushiSagas]);
 }

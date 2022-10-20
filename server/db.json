@@ -2,21 +2,21 @@
   "sushi": [
     {
       "type": "Nigiri",
-      "name": "wdhdhdh",
-      "recipe": "ddhdhdhdhdhdhdj",
-      "id": 5
+      "name": "Maki",
+      "recipe": "To get started, you need the right kind of seaweed. The one on the left below is thick and perfect for rolling sushi (this is the one I use). The one on the right is too flimsy. I use that seaweed for snacking. Make sure you get seaweed specific for sushi-making, which it should state on the package.",
+      "id": 1
+    },
+    {
+      "type": "Gunkan maki",
+      "name": "California",
+      "recipe": "When you get to the edge without any rice, brush with a little water and continue to roll into a tight roll.\nWrap in cling film. Remove the mat and roll tightly in cling film before a grown-up cuts the sushi into thick slices, then unravel the cling film.\nTO MAKE PRESSED SUSHI: Layer over some smoked salmon. Line a loaf tin with cling film, then place a thin layer of smoked salmon inside on top of the cling film.",
+      "id": 2
     },
     {
       "type": "Uramaki",
-      "name": "fsfsf",
-      "recipe": "fsfsfsffsfsfsfs",
-      "id": 6
-    },
-    {
-      "type": "Nigiri",
-      "name": "fsfs",
-      "recipe": "fsfsfsfsfsfsfasf",
-      "id": 7
+      "name": "Fila",
+      "recipe": "Place roughly 110g of sushi rice on the nori seaweed and spread across evenly. Place the sprig of dill on the rice. Flip the nori seaweed and sushi rice so that the nori seaweed is facing upward. Add a small portion of wasabi and place the two strips of cucumber and sashimi grade fish in the centre. Start rolling from the bottom, tucking the edge of the roll to fully enclose the filling. Lift the edge of the mat and continue to roll forward until the sushi is formed into a firm cylinder.",
+      "id": 3
     }
   ]
 }

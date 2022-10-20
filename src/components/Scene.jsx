@@ -167,10 +167,10 @@ export const Scene = ({ cube }) => {
         <Environment preset="forest" />
         <Suspense>
           <SushiPlate scale={[0.5, 0.5, 0.5]} />
-          {cube === "Nigiri" && (
+          {cube === "Uramaki" && (
             <Sushi1 scale={[0.5, 0.5, 0.5]} position={[0, 0, 0]} />
           )}
-          {cube === "Uramaki" && (
+          {cube === "Nigiri" && (
             <Sushi2 position={[0, 0, 0]} scale={[0.5, 0.5, 0.5]} />
           )}
           {cube === "Gunkan maki" && (
