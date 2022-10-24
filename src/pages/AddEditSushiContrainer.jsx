@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { addSushiStart, updateSushiStart } from "../store/actions";
+import AddEditSushi from "../components/AddEditSushi/AddEditSushi";
 
 const initialState = {
   type: "Nigiri",
@@ -10,7 +11,7 @@ const initialState = {
   recipe: "",
 };
 
-const AddSushi = ({ setCube }) => {
+const AddEditSushiContrainer = ({ setCube }) => {
   const [formValue, setValue] = useState(initialState);
   const [editMode, setEditMode] = useState(false);
   const { type, name, recipe } = formValue;
@@ -112,66 +113,23 @@ const AddSushi = ({ setCube }) => {
     setValue({ ...formValue, [name]: value });
   };
 
-  const blurHandler = (e) => {};
   return (
     <>
-      <form action="">
-        <div className="form-div">
-          Choose type
-          <select
-            style={{ marginBottom: "10px", marginTop: "10px" }}
-            className="select"
-            value={type}
-            name="type"
-            onChange={handleTypeChange}
-          >
-            <option value="Nigiri">Nigiri</option>
-            <option value="Uramaki">Uramaki</option>
-            <option value="Gunkan maki">Gunkan maki</option>
-          </select>
-          <label htmlFor="name">Enter sushi name: </label>
-          {<div className="error-text">{nameError}</div>}
-          <input
-            style={{
-              marginBottom: "20px",
-              border: "solid 1px white",
-              borderRadius: "5px",
-              height: "20px",
-              marginTop: "10px",
-            }}
-            type="text"
-            name="name"
-            value={name || ""}
-            required
-            onChange={handleNameChange}
-            onBlur={(e) => blurHandler(e)}
-          />
-          Enter recipe
-          <textarea
-            name="recipe"
-            cols="30"
-            className="recipe-textarea"
-            rows="10"
-            value={recipe || ""}
-            onChange={handleRecipeChange}
-            onBlur={(e) => blurHandler(e)}
-          ></textarea>
-          {<div className="error-text">{recipeError}</div>}
-          <input
-            type="submit"
-            className="button-32"
-            style={{ backgroundColor: "rgb(25, 189, 25)" }}
-            value={!editMode ? "Add" : "Edit"}
-            disabled={!formValid}
-            onClick={handleSubmit}
-          />
-          <Link to={"/"}>
-            <button className="button-32"> Cancel </button>
-          </Link>
-        </div>
-      </form>
+      <AddEditSushi
+        type={type}
+        handleTypeChange={handleTypeChange}
+        nameError={nameError}
+        name={name}
+        recipe={recipe}
+        handleRecipeChange={handleRecipeChange}
+        handleNameChange={handleNameChange}
+        recipeError={recipeError}
+        editMode={editMode}
+        formValid={formValid}
+        handleSubmit={handleSubmit}
+      />
     </>
   );
 };
 
-export default AddSushi;
+export default AddEditSushiContrainer;

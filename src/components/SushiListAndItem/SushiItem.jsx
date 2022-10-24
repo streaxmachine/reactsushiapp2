@@ -1,25 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { deleteSushiStart, getSushiId, showSushiInfo } from "../store/actions";
 
 const SushiItem = (props) => {
   const {
-    name,
     type,
-    recipe,
+    name,
     setCube = Function.prototype,
-    id,
+    recipe,
     children,
+    handleClick,
+    handleDelete,
+    id,
   } = props;
-  const dispatch = useDispatch();
-  const handleDelete = (id) => {
-    dispatch(deleteSushiStart(id));
-  };
-
-  const handleClick = (id) => {
-    dispatch(getSushiId(id));
-    dispatch(showSushiInfo(true));
-  };
 
   return (
     <>
