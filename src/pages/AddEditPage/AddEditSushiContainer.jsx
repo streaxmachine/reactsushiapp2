@@ -11,7 +11,7 @@ const initialState = {
   recipe: "",
 };
 
-const AddEditSushiContrainer = ({ setCube }) => {
+const AddEditSushiContainer = ({ setCube }) => {
   const [formValue, setValue] = useState(initialState);
   const [editMode, setEditMode] = useState(false);
   const { type, name, recipe } = formValue;
@@ -132,4 +132,4 @@ const AddEditSushiContrainer = ({ setCube }) => {
   );
 };
 
-export default AddEditSushiContrainer;
+export default AddEditSushiContainer;

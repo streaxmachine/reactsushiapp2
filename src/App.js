@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PreloaderContainer from "./components/Preloader/PreloaderContainer";
 import AboutSushiContainer from "./pages/AboutPage/AboutSushiContainer";
 import SushiInfoContainer from "./components/SushiQuickInfo/SushiInfoContainer";
-import AddEditSushiContrainer from "./pages/AddEditPage/AddEditSushiContrainer";
+import AddEditSushiContainer from "./pages/AddEditPage/AddEditSushiContainer";
 import HomeContainer from "./pages/HomePage/HomeContainer";
 
 function App() {
@@ -26,11 +26,11 @@ function App() {
               />
               <Route
                 path="/addSushi"
-                element={<AddEditSushiContrainer setCube={setCube} />}
+                element={<AddEditSushiContainer setCube={setCube} />}
               />
               <Route
                 path="/editSushi/:id"
-                element={<AddEditSushiContrainer setCube={setCube} />}
+                element={<AddEditSushiContainer setCube={setCube} />}
               />
               <Route path="/aboutSushi/:id" element={<AboutSushiContainer />} />
             </Routes>
