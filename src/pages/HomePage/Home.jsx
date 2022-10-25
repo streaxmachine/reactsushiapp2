@@ -1,10 +1,10 @@
 import React from "react";
-import SushiItemContainer from "../SushiListAndItem/SushiItemContainer";
-import SushiList from "../SushiListAndItem/SushiList";
 import { Link } from "react-router-dom";
-import BlockFilter from "./BlockFilter";
+import BlockFilterContainer from "./BlockFilterContainer";
+import SushiList from "../../components/SushiListAndItem/SushiList";
+import SushiItemContainer from "../../components/SushiListAndItem/SushiItemContainer";
 
-const HomePage = (props) => {
+const Home = (props) => {
   const { sushi, postsQuery, setCube, setSearchParams, loading } = props;
 
   if (loading) {
@@ -20,8 +20,10 @@ const HomePage = (props) => {
       <Link to={`/addSushi`}>
         <button className="btn">addSushi</button>
       </Link>
-      <BlockFilter postQuery={postsQuery} setSearchParams={setSearchParams} />
-
+      <BlockFilterContainer
+        postQuery={postsQuery}
+        setSearchParams={setSearchParams}
+      />
       <SushiList>
         {sushi &&
           sushi
@@ -54,4 +56,4 @@ const HomePage = (props) => {
   );
 };
 
-export default HomePage;
+export default Home;

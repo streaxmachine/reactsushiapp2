@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { useEffect } from "react";
+import { Preloader } from "./Preloader";
 
-const Preloader = () => {
+const PreloaderContainer = () => {
   const { active } = useProgress();
   const [loading, setLoading] = useState(true);
 
@@ -14,14 +15,6 @@ const Preloader = () => {
     }
   }, [active]);
 
-  return (
-    <>
-      {loading ? (
-        <div className="loader-container-starter">
-          <div className="spinner"></div>
-        </div>
-      ) : null}
-    </>
-  );
+  return <Preloader loading={loading} />;
 };
-export default Preloader;
+export default PreloaderContainer;

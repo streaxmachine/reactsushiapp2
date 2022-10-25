@@ -1,14 +1,11 @@
 import { useSelector } from "react-redux";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { loadSushiStart } from "../store/actions";
-import SushiItemContainer from "../components/SushiListAndItem/SushiItemContainer";
-import SushiList from "../components/SushiListAndItem/SushiList";
-import { Link, useSearchParams } from "react-router-dom";
-import BlockFilter from "../components/HomePage/BlockFilter";
-import HomePage from "../components/HomePage/HomePage";
+import { loadSushiStart } from "../../store/actions";
+import { useSearchParams } from "react-router-dom";
+import Home from "./Home";
 
-const Home = ({ setCube }) => {
+const HomeContainer = ({ setCube }) => {
   const dispatch = useDispatch();
   const { sushi, loading } = useSelector((s) => s.sushiData);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,7 +18,7 @@ const Home = ({ setCube }) => {
 
   return (
     <>
-      <HomePage
+      <Home
         sushi={sushi}
         postsQuery={postsQuery}
         setCube={setCube}
@@ -32,4 +29,4 @@ const Home = ({ setCube }) => {
   );
 };
 
-export default Home;
+export default HomeContainer;

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { addSushiStart, updateSushiStart } from "../store/actions";
-import AddEditSushi from "../components/AddEditSushi/AddEditSushi";
+import { addSushiStart, updateSushiStart } from "../../store/actions";
+import AddEditSushi from "./AddEditSushi";
 
 const initialState = {
   type: "Nigiri",

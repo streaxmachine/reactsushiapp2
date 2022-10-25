@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import AboutSushi from "./AboutSushi";
 
 const singleSushi = {
   type: "",
@@ -8,7 +9,7 @@ const singleSushi = {
   recipe: "",
 };
 
-const AboutSushi = () => {
+const AboutSushiContainer = () => {
   const [sushiValue, setValue] = useState(singleSushi);
   const { id } = useParams();
   const { sushi } = useSelector((s) => s.sushiData);
@@ -21,20 +22,8 @@ const AboutSushi = () => {
   }, [id]);
 
   return (
-    <>
-      <button
-        className="btn-about-sushi button-32"
-        onClick={() => navigate(-1)}
-      >
-        Go back
-      </button>
-      <ul className="about-sushi">
-        <li className="about-sushi-text">type: {type}</li>
-        <li className="about-sushi-text">name: {name}</li>
-        <li className="about-sushi-text">recipe: {recipe}</li>
-      </ul>
-    </>
+    <AboutSushi type={type} name={name} recipe={recipe} navigate={navigate} />
   );
 };
 
-export default AboutSushi;
+export default AboutSushiContainer;
