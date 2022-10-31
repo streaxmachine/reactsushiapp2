@@ -157,14 +157,16 @@ export const Scene = ({ cube }) => {
       >
         <ambientLight intensity={0.1} />
         <spotLight
-          position={[1, 6, 8.5]}
-          angle={0.2}
-          penumbra={1}
-          intensity={1}
+          position={[0.3, 3, 1]}
+          color={"orange"}
           castShadow
-          shadow-mapSize={[256, 256]}
+          angle={1}
+          distance={135}
+          penumbra={0.5}
+          intensity={3}
+          decay={2}
         />
-        <Environment preset="forest" />
+        <Environment preset="sunset" />
         <Suspense>
           <SushiPlate scale={[0.5, 0.5, 0.5]} />
           {cube === "Uramaki" && (
